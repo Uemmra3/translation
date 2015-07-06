@@ -29,21 +29,21 @@ Webアセンブリが明らかになるにつれ、各プラウザはWebパフ�
         開発者はHTTP コンテンツエンコードに依存するのを避けたがっています: 汎用的な圧縮にはgzipを使う
             Emscripten に対して、asm.js / WebAssembly 内で、ダウンロード中の展開(gzipよりもっと積極的なアルゴリズムを許可する)を実行するサポートを追加
     ブラウザストレージの能力を改良する
-        Developers seeking to avoid the permission prompt associated with persistent storage hit limitations of temporary storage as currently implemented in browsers.
+        永続ストレージに関する権限のプロンプトを避けようとしている開発者は、現在ブラウザに実装されている一時ストレージの制限につき当たります。
             Improve temporary quota limits to take into account factors like frecency.
             Provide more information on quota usage and allowance [1].
             Propose, standardize and implement finer-granularity units of evictable storage [1].
             Allow cross-origin storage usage [1].
-        Developers that need persistent storage guarantees hit limitations of persistent storage as currently implemented in browsers.
+        永続ストレージの保証を必要とする開発者は、現在ブラウザに実装されている一時ストレージの制限につき当たります。
             Standardize persistent storage so that other browsers implement [1].
             Reduce UI friction associated with the persistent permission prompt [1].
             Improve storage management/eviction UI for browser users.
     ブラウザのグラフィック能力を改良する
-        Ship WebGL2 [1].
-        Standardize and implement streaming WebGL canvas via WebRTC [1,2].
-        Run WebGL on discrete hardware for systems with integrated+discrete (e.g. nVidia Optimus).
-    Allow developers to better avoid 32-bit browser Out-of-Memory conditions.
-        Ship 64-bit Firefox on 64-bit Windows.
+        WebGL2を出荷[1].
+        WebRTC経由でのWebGLキャンバスのストリーミングの標準化や実装  [1,2].
+        統合+ディスクリートつきのシステム向けディスクリートハードウェア (例 nVidia Optimus)でWebGLを実行する
+    開発者が32-bitブラウザのメモリ不足(Out-of-Memory)条件をうまく避けられるようにする
+        64-bit Windowsで64-bit Firefoxの出荷
         Avoid Emscripten in-memory Virtual File System for asset storage by leveraging pthreads and FileReaderSync to provide synchronous file I/O in workers.
     プラットフォームをまたいだパフォーマンスへの投資を続ける
         Significantly optimize WebAudio performance [1].
