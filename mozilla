@@ -5,3 +5,67 @@ Webアセンブリが明らかになるにつれ、各プラウザはWebパフ�
 から、技術を進める大きなきっかけになります。Webへの利益を最大化するために、解決策ができるだけ広い範囲のアプリケーションに利益があることを保証するよう、注意が払われています。
 
 この文書には2つのレベルがあり、最初はロードマップの節で、現在開発中で来年に取り組める、合理的なレベルでの自信を持っているものを含んでいます。2つ目は検討中の節で、研究活動中のトピックを含んでいます。
+
+===============
+
+Roadmap
+
+    Allow developers to better exploit hardware parallelism.
+        Developers are struggling to get multi-threaded games running efficiently on the Web:
+            Standardize, implement and ship SharedArrayBuffer [1,2].
+            Add pthreads support to Emscripten [1,2].
+            Expose performance-sensitive Web APIs to Web Workers: WebGL, WebSockets, IndexedDB, WebAudio, WebRTC, WebVR.
+            Share compiled code (asm.js and WebAssembly) between workers [1].
+        Developers want to take advantage of SIMD hardware to optimize their code:
+            Standardize, implement and ship SIMD.js [1,2].
+            Include SIMD in WebAssembly [1].
+            Add SIMD support to Emscripten [1].
+    Improve cold load time of large compiled codebases.
+        Developers want to see reduced download, compilation and startup time for multi-million line compiled codebases.
+            WebAssembly will provide significant download size reductions (even before native support, through the polyfill) [1].
+            Natively decoding WebAssembly will be significantly faster than parsing JavaScript/asm.js [1].
+            Add a fast WebAssembly/asm.js compiler that allows an app to start quickly while a fully-optimizing compilation proceeds in a background thread [1].
+            Off-main-thread, streaming parsing/compilation [1].
+        Developers want to avoid depending on HTTP Content-Encoding:gzip for generic compression.
+            Add Emscripten support to perform decompression in asm.js / WebAssembly while downloading (allowing more aggressive algorithms than gzip).
+    Improve browser storage capabilities.
+        Developers seeking to avoid the permission prompt associated with persistent storage hit limitations of temporary storage as currently implemented in browsers.
+            Improve temporary quota limits to take into account factors like frecency.
+            Provide more information on quota usage and allowance [1].
+            Propose, standardize and implement finer-granularity units of evictable storage [1].
+            Allow cross-origin storage usage [1].
+        Developers that need persistent storage guarantees hit limitations of persistent storage as currently implemented in browsers.
+            Standardize persistent storage so that other browsers implement [1].
+            Reduce UI friction associated with the persistent permission prompt [1].
+            Improve storage management/eviction UI for browser users.
+    Improve browser graphics capabilities.
+        Ship WebGL2 [1].
+        Standardize and implement streaming WebGL canvas via WebRTC [1,2].
+        Run WebGL on discrete hardware for systems with integrated+discrete (e.g. nVidia Optimus).
+    Allow developers to better avoid 32-bit browser Out-of-Memory conditions.
+        Ship 64-bit Firefox on 64-bit Windows.
+        Avoid Emscripten in-memory Virtual File System for asset storage by leveraging pthreads and FileReaderSync to provide synchronous file I/O in workers.
+    Continue investment in performance across the platform.
+        Significantly optimize WebAudio performance [1].
+        Reduce WebGL shader compile times [1,2].
+        Reduce latency and jitter in the browser’s rendering pipeline [1,2,3,4].
+        Continue investments in the performance of JS, DOM, WebGL, WebRTC, codec, layout, rendering, compositing, animation, etc.
+    Continue investment in Emscripten.
+        Add support for pthreads, SIMD, and WebAssembly, as mentioned above.
+        Further improve compilation speed.
+    Continue investment in Firefox developer tooling to better support game developers.
+        Improve Web Worker support [1].
+        Allow developers to break on various asm.js/WebAssembly error conditions [1].
+
+Under Consideration
+
+    Developers are having trouble identifying how many Web Workers they should create to distribute their workload. Benchmarking methods often prove unreliable.
+    Developers are hitting the 20-per-origin limit on web workers in Firefox and are requesting a much higher limit.
+    Leverage multi-process browser architecture to guarantee a fresh address space for games with large contiguous heaps allocated early in process startup.
+    Investigate Out-of-Memory error reporting mechanism to send safe/sanitized triage information back to Web app developers.
+    Collaborate on new standards to improve IME capabilities [1,2].
+    Add hardware cursor API [1].
+    Improve Gamepad API [1].
+    Add Pointer Clipping extension to Pointer Lock API [1].
+    Add Emscripten tooling for memory use/leak debugging.
+    Standardize (as part of WebAssembly or more generally) a more scalable form of source maps suitable for large compiled codes.
