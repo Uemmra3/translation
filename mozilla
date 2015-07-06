@@ -1,5 +1,7 @@
 ゲームとゲーム技術向けプラットフォームとしてのWebの更なる進歩やアピールのため、Mozillaはゲームに特化したロードマップを発行しました。要するに、これは高パフォーマンスで、プラグインなしのWeb上のゲームに関するものです。最近数年で、我々はめざましい進歩をとげました。この流れを続けるため、Mozillaはゲーム開発者やツールメーカーと協働し、コミュニティにより大きな力を与える追加改良を割り出しました。次のロードマップは、我々が受けたフィードバックと、そのフィードバックに応えて現在追求している解決策の両方をざっと示しています。このロードマップは変化しがちであるかもしれません。
 
-With the unveiling of WebAssembly, browsers have taken another common step towards native levels of performance on the Web. This roadmap outlines the wider view of additional Web platform functionality needed to allow game developers to provide the best possible experiences. Games are often a great catalyst for driving technology forward due to their demanding nature. To maximize the benefit to the Web, care has been taken to ensure that solutions will benefit the widest possible range of applications.
+Webアセンブリが明らかになるにつれ、各プラウザはWebパフォーマンスがネィティブレベルになるよう、共通の対策を取ってきています。このロードマップは、ゲーム開発者
+が最善のエクスペリエンスを提供するためにWebプラットフォームに追加された機能について、より広がった視点をざっと示します。ゲームはしばしば、その要求する性質
+から、技術を進める大きなきっかけになります。Webへの利益を最大化するために、解決策ができるだけ広い範囲のアプリケーションに利益があることを保証するよう、注意が払われています。
 
 There are two levels to this document. The first is the Roadmap section which contains areas that are currently in development and we have a reasonable level of confidence we can address in the next year. The second is the Under Consideration section which contains topics that are under active investigation.
