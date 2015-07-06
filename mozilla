@@ -8,27 +8,27 @@ Webアセンブリが明らかになるにつれ、各プラウザはWebパフ�
 
 ===============
 
-Roadmap
+ロードマップ
 
-    Allow developers to better exploit hardware parallelism.
-        Developers are struggling to get multi-threaded games running efficiently on the Web:
-            Standardize, implement and ship SharedArrayBuffer [1,2].
-            Add pthreads support to Emscripten [1,2].
-            Expose performance-sensitive Web APIs to Web Workers: WebGL, WebSockets, IndexedDB, WebAudio, WebRTC, WebVR.
-            Share compiled code (asm.js and WebAssembly) between workers [1].
-        Developers want to take advantage of SIMD hardware to optimize their code:
-            Standardize, implement and ship SIMD.js [1,2].
-            Include SIMD in WebAssembly [1].
-            Add SIMD support to Emscripten [1].
-    Improve cold load time of large compiled codebases.
-        Developers want to see reduced download, compilation and startup time for multi-million line compiled codebases.
-            WebAssembly will provide significant download size reductions (even before native support, through the polyfill) [1].
-            Natively decoding WebAssembly will be significantly faster than parsing JavaScript/asm.js [1].
-            Add a fast WebAssembly/asm.js compiler that allows an app to start quickly while a fully-optimizing compilation proceeds in a background thread [1].
-            Off-main-thread, streaming parsing/compilation [1].
-        Developers want to avoid depending on HTTP Content-Encoding:gzip for generic compression.
-            Add Emscripten support to perform decompression in asm.js / WebAssembly while downloading (allowing more aggressive algorithms than gzip).
-    Improve browser storage capabilities.
+    開発者に、ハードウェアの並行性をより良く利用できるようにする
+        開発者はWeb上でマルチスレッドのゲームが効率よく動作するようにするのに格闘しています:
+            共有配列バッファの標準化、実装、出荷 [1,2].
+            Emscriptenへのpthreadサポート追加 [1,2].
+            パフォーマンスに敏感なWeb APIをWebワーカに晒す: WebGL, WebSockets, IndexedDB, WebAudio, WebRTC, WebVR.
+            ワーカ間でコンパイル済みコード(asm.js や WebAssembly) を共有する [1].
+        開発者は SIMD ハードウェアがコード最適化してくれるのを望んでいます:
+            SIMD.jsの標準化、実装、出荷 [1,2].
+            SIMD を WebAssembly 内に含める [1].
+            EmscriptenへのSIMD サポート追加 [1].
+    大規模なコンパイル済みコードベースのコールドロード時間を改善する
+        開発者は、数百万業のコンパイル済みコードベースのダウンロード、コンパイル、スタートアップ時間が減らされることを望んでいます。
+            WebAssembly は目立ったダウンロードサイズ圧縮を提供するでしょう (polyfill経由でのネイティブサポートがなされる以前であっても) [1].
+            ネイティブにデコードされた WebAssembly は JavaScript/asm.js のパーズよりも、はるかに高速でしょう [1].
+            WebAssembly/asm.js に高速コンパイラを追加して、バックグラウンドのスレッド内で完全な最適化コンパイルを進めて、アプリが素早く起動できるようにする [1].
+            メインスレッド以外で、パーズ/コンパイルをストリーミング化 [1].
+        開発者はHTTP コンテンツエンコードに依存するのを避けたがっています: 汎用的な圧縮にはgzipを使う
+            Emscripten に対して、asm.js / WebAssembly 内で、ダウンロード中の展開(gzipよりもっと積極的なアルゴリズムを許可する)を実行するサポートを追加
+    ブラウザストレージの能力を改良する
         Developers seeking to avoid the permission prompt associated with persistent storage hit limitations of temporary storage as currently implemented in browsers.
             Improve temporary quota limits to take into account factors like frecency.
             Provide more information on quota usage and allowance [1].
@@ -38,26 +38,26 @@ Roadmap
             Standardize persistent storage so that other browsers implement [1].
             Reduce UI friction associated with the persistent permission prompt [1].
             Improve storage management/eviction UI for browser users.
-    Improve browser graphics capabilities.
+    ブラウザのグラフィック能力を改良する
         Ship WebGL2 [1].
         Standardize and implement streaming WebGL canvas via WebRTC [1,2].
         Run WebGL on discrete hardware for systems with integrated+discrete (e.g. nVidia Optimus).
     Allow developers to better avoid 32-bit browser Out-of-Memory conditions.
         Ship 64-bit Firefox on 64-bit Windows.
         Avoid Emscripten in-memory Virtual File System for asset storage by leveraging pthreads and FileReaderSync to provide synchronous file I/O in workers.
-    Continue investment in performance across the platform.
+    プラットフォームをまたいだパフォーマンスへの投資を続ける
         Significantly optimize WebAudio performance [1].
         Reduce WebGL shader compile times [1,2].
         Reduce latency and jitter in the browser’s rendering pipeline [1,2,3,4].
         Continue investments in the performance of JS, DOM, WebGL, WebRTC, codec, layout, rendering, compositing, animation, etc.
-    Continue investment in Emscripten.
+    Emscriptenへの投資を続ける
         Add support for pthreads, SIMD, and WebAssembly, as mentioned above.
         Further improve compilation speed.
-    Continue investment in Firefox developer tooling to better support game developers.
+    Firefox 開発ツールがより良いゲーム開発者サポートするよす投資を続ける
         Improve Web Worker support [1].
         Allow developers to break on various asm.js/WebAssembly error conditions [1].
 
-Under Consideration
+製作中
 
     Developers are having trouble identifying how many Web Workers they should create to distribute their workload. Benchmarking methods often prove unreliable.
     Developers are hitting the 20-per-origin limit on web workers in Firefox and are requesting a much higher limit.
