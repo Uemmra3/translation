@@ -59,13 +59,13 @@ Webアセンブリが明らかになるにつれ、各プラウザはWebパフ�
 
 製作中
 
-    Developers are having trouble identifying how many Web Workers they should create to distribute their workload. Benchmarking methods often prove unreliable.
-    Developers are hitting the 20-per-origin limit on web workers in Firefox and are requesting a much higher limit.
-    Leverage multi-process browser architecture to guarantee a fresh address space for games with large contiguous heaps allocated early in process startup.
-    Investigate Out-of-Memory error reporting mechanism to send safe/sanitized triage information back to Web app developers.
-    Collaborate on new standards to improve IME capabilities [1,2].
-    Add hardware cursor API [1].
-    Improve Gamepad API [1].
-    Add Pointer Clipping extension to Pointer Lock API [1].
-    Add Emscripten tooling for memory use/leak debugging.
-    Standardize (as part of WebAssembly or more generally) a more scalable form of source maps suitable for large compiled codes.
+    開発者は、負荷を分配するのにいくつのWebワーカを作成したら良いか決めるのに困っています。しばしばベンチマークメソッドが信頼できることがわかっています。
+    開発者はFirefoxでのWebワーカがオリジン毎に20である制限につき当っており、もっと高い制限を要求しています。
+    プロセス起動の初期に配分された大きな隣接ヒープで、ゲーム用の新鮮なアドレススペースを保証するマルチプロセスブラウザアーキテクチャをてこ入れします。
+    メモリ不足(Out-of-Memory)エラーの報告メカニズムを研究して、安全な/サニタイズ済みの選別情報をWebアプリ開発者に戻す。
+    IME 能力の改良のための新標準の共同研究 [1,2].
+    ハードウェアカーソルAPIの追加 [1].
+    ゲームパッドAPIの改良 [1].
+    ポインターロックAPIへポインターをクリップする拡張を追加 [1].
+    メモリ使用/リーク のデバッグ用Emscripten ツールの追加
+    大規模なコンパイルコードに適した、よりスケーラブルなソースマップ形式の標準化(WebAssembly の一部や、より一般的に)
