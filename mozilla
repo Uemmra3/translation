@@ -44,18 +44,18 @@ Webアセンブリが明らかになるにつれ、各プラウザはWebパフ�
         統合+ディスクリートつきのシステム向けディスクリートハードウェア (例 nVidia Optimus)でWebGLを実行する
     開発者が32-bitブラウザのメモリ不足(Out-of-Memory)条件をうまく避けられるようにする
         64-bit Windowsで64-bit Firefoxの出荷
-        Avoid Emscripten in-memory Virtual File System for asset storage by leveraging pthreads and FileReaderSync to provide synchronous file I/O in workers.
+        by leveraging pthreads と FileReaderSync が同期ファイルI/Oをワーカーに供給するよう、てこ入れすることで、Emscriptenがアセットストレージ用のメモリ内仮想ファイルシステムを避けます
     プラットフォームをまたいだパフォーマンスへの投資を続ける
-        Significantly optimize WebAudio performance [1].
-        Reduce WebGL shader compile times [1,2].
-        Reduce latency and jitter in the browser’s rendering pipeline [1,2,3,4].
-        Continue investments in the performance of JS, DOM, WebGL, WebRTC, codec, layout, rendering, compositing, animation, etc.
+        WebAudio パフォーマンスの、重要な最適化 [1].
+        WebGL シェーダーのコンパイル時間の削減 [1,2].
+        ブラウザのレンダリングパイプライン内で、遅延やバラツキの削減 [1,2,3,4].
+        JS, DOM, WebGL, WebRTC, codec, layout, rendering, compositing, animation, などへの継続的投資
     Emscriptenへの投資を続ける
-        Add support for pthreads, SIMD, and WebAssembly, as mentioned above.
-        Further improve compilation speed.
-    Firefox 開発ツールがより良いゲーム開発者サポートするよす投資を続ける
-        Improve Web Worker support [1].
-        Allow developers to break on various asm.js/WebAssembly error conditions [1].
+        すでに記載の通り、pthreads, SIMD, WebAssemblyのサポート追加
+        コンパイルスピードのいっそうの改良
+    Firefox 開発ツールがより良いゲーム開発者サポートするよう投資を続ける
+        Web ワーカのサポート改良 [1].
+        開発者が asm.js/WebAssembly のさまざまなエラー条件にブレークポイントを貼れるようにする [1].
 
 製作中
 
