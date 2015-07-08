@@ -30,21 +30,21 @@ Webアセンブリが明らかになるにつれ、各プラウザはWebパフ�
             Emscripten に対して、asm.js / WebAssembly 内で、ダウンロード中の展開(gzipよりもっと積極的なアルゴリズムを許可する)を実行するサポートを追加
     ブラウザストレージの能力を改良する
         永続ストレージに関する権限のプロンプトを避けようとしている開発者は、現在ブラウザに実装されている一時ストレージの制限につき当たります。
-            Improve temporary quota limits to take into account factors like frecency.
-            Provide more information on quota usage and allowance [1].
-            Propose, standardize and implement finer-granularity units of evictable storage [1].
-            Allow cross-origin storage usage [1].
+            周波数のようなアカウント要因を考慮に入れるため、一時クオータ制限を改良する
+            クオータ使用と許可に関するもっと詳細な商法提供 [1].
+            強制退去可能な(evictable)ストレージの精度単位を細かくすることの提案、標準化、実装 [1].
+            クロスオリジンのストレージ使用の許可 [1].
         永続ストレージの保証を必要とする開発者は、現在ブラウザに実装されている一時ストレージの制限につき当たります。
-            Standardize persistent storage so that other browsers implement [1].
-            Reduce UI friction associated with the persistent permission prompt [1].
-            Improve storage management/eviction UI for browser users.
+            永続化ストレージの標準化して、他のブラウザが実装できるようにする [1].
+            永続化パーミッションのプロンプトに関する、UI 摩擦の削減 [1].
+            ブラウザユーザ向けに、ストレージ管理/強制退去(eviction)の改良
     ブラウザのグラフィック能力を改良する
         WebGL2を出荷[1].
         WebRTC経由でのWebGLキャンバスのストリーミングの標準化や実装  [1,2].
         統合+ディスクリートつきのシステム向けディスクリートハードウェア (例 nVidia Optimus)でWebGLを実行する
     開発者が32-bitブラウザのメモリ不足(Out-of-Memory)条件をうまく避けられるようにする
         64-bit Windowsで64-bit Firefoxの出荷
-        by leveraging pthreads と FileReaderSync が同期ファイルI/Oをワーカーに供給するよう、てこ入れすることで、Emscriptenがアセットストレージ用のメモリ内仮想ファイルシステムを避けます
+        pthreadsとFileReaderSyncが同期ファイルI/Oをワーカーに供給するよう、てこ入れすることで、Emscriptenがアセットストレージ用のメモリ内仮想ファイルシステムを避けます
     プラットフォームをまたいだパフォーマンスへの投資を続ける
         WebAudio パフォーマンスの、重要な最適化 [1].
         WebGL シェーダーのコンパイル時間の削減 [1,2].
